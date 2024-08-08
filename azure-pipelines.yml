@@ -11,28 +11,28 @@ pool:
   name: Default
 
 steps:
-#- task: Maven@3
-#  inputs:
-#    mavenPomFile: 'pom.xml'
-#    mavenOptions: '-Xmx3072m'
-#    javaHomeOption: 'JDKVersion'
-#    jdkVersionOption: '1.8'
-#    jdkArchitectureOption: 'x64'
-#    publishJUnitResults: true
-#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#    goals: 'package'
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'dock2er'
-#    command: 'login'
-#- task: Docker@2
-#  inputs:
-#    containerRegistry: 'dock2er'
-#    repository: 'devops-docker'
-#    command: 'buildAndPush'
-#    Dockerfile: '**/AzureDockerfile'
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    mavenOptions: '-Xmx3072m'
+    javaHomeOption: 'JDKVersion'
+    jdkVersionOption: '1.8'
+    jdkArchitectureOption: 'x64'
+    publishJUnitResults: true
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    goals: 'package'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock2er'
+    command: 'login'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dock2er'
+    repository: 'devops-docker'
+    command: 'buildAndPush'
+    Dockerfile: '**/AzureDockerfile'
 
 
-- script: docker --version
-  displayName: 'Check Docker Version'
+#- script: docker --version
+#  displayName: 'Check Docker Version'
 
