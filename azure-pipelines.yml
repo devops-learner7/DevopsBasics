@@ -39,7 +39,8 @@ steps:
     repository: 'suraen/azuredevopstraining'
     command: 'build'
     Dockerfile: '**/AzureDockerfile'
-    tags: 
+    tags: $(Build.BuildId)
+
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'for ecr'
@@ -48,4 +49,4 @@ steps:
     sourceImageName: 'suraen/azuredevopstraining'
     sourceImageTag: '$(Build.BuildId)'
     repositoryName: 'azure'
-    pushTag: 
+    pushTag: '$(Build.BuildId)'
