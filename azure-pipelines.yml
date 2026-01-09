@@ -45,6 +45,7 @@ steps:
     awsCredentials: 'for ecr'
     regionName: 'ap-south-1'
     imageSource: 'imagename'
+    sourceImageName: 'suraen/azuredevopstraining'
     sourceImageTag: 
     repositoryName: 'azure'
     pushTag: 
