@@ -33,3 +33,9 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'warfile'
     publishLocation: 'Container'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'dockerhub registry'
+    repository: 'suraen/azuredevopstraining'
+    command: 'buildAndPush'
+    Dockerfile: '**/AzureDockerfile'
