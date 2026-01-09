@@ -37,12 +37,13 @@ steps:
   inputs:
     containerRegistry: 'dockerhub registry'
     repository: 'suraen/azuredevopstraining'
-    command: 'buildAndPush'
+    command: 'build'
     Dockerfile: '**/AzureDockerfile'
+    tags: 'latest'
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'for ecr'
     regionName: 'us-east-1'
     imageSource: 'imagename'
-    sourceImageName: 'tomact'
+    sourceImageName: 'suraen/azuredevopstraining'
     repositoryName: 'azure'
