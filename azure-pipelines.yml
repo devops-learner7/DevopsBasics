@@ -46,6 +46,6 @@ steps:
     regionName: 'ap-south-1'
     imageSource: 'imagename'
     sourceImageName: 'suraen/azuredevopstraining'
-    sourceImageTag: 
+    sourceImageTag: '$(Build.BuildId)'
     repositoryName: 'azure'
     pushTag: 
