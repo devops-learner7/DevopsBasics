@@ -43,7 +43,11 @@ steps:
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'for ecr'
-    regionName: 'us-east-1'
+    regionName: 'ap-south-1'
     imageSource: 'imagename'
     sourceImageName: 'suraen/azuredevopstraining'
+    sourceImageTag: 
     repositoryName: 'azure'
+    pushTag: 
+    autoCreateRepository: true
+    forceDockerNamingConventions: true
