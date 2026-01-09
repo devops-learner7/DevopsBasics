@@ -39,3 +39,10 @@ steps:
     repository: 'suraen/azuredevopstraining'
     command: 'buildAndPush'
     Dockerfile: '**/AzureDockerfile'
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'for ecr'
+    regionName: 'us-east-1'
+    imageSource: 'imagename'
+    sourceImageName: 'tomact'
+    repositoryName: 'azure'
