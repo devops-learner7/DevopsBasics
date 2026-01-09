@@ -39,15 +39,12 @@ steps:
     repository: 'suraen/azuredevopstraining'
     command: 'build'
     Dockerfile: '**/AzureDockerfile'
-    tags: 'latest'
+    tags: 
 - task: ECRPushImage@1
   inputs:
     awsCredentials: 'for ecr'
     regionName: 'ap-south-1'
     imageSource: 'imagename'
-    sourceImageName: 'suraen/azuredevopstraining'
     sourceImageTag: 
     repositoryName: 'azure'
     pushTag: 
-    autoCreateRepository: true
-    forceDockerNamingConventions: true
